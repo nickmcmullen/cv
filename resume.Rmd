@@ -64,15 +64,15 @@ Contact {#contact}
 Techical Skills {#skills}
 --------------------------------------------------------------------------------
 
-
 ```{r}
+
 skills <- tribble(
   ~skill,               ~level,
-  "Excel",              4.5,
-  "R",                  4,
-  "Tableau",             3.5,
-  "SQL",                 3
+  "R",                  4.5,
+  "Excel",              4,
+  "Tableau",            3.5
 )
+
 build_skill_bars(skills)
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Nick McMullen's PAF 514 Test Resume"
+author: Nick McMullen
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -27,7 +27,7 @@ links <- c()
 source('parsing_functions.R')
 
 # Load csv with position info
-position_data <- read_csv('positions.csv')
+position_data <- read.csv('positions.csv')
 ```
 
 
@@ -63,11 +63,10 @@ Contact {#contact}
 --------------------------------------------------------------------------------
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> nmcmulle@asu.edu
+- <i class="fa fa-github"></i> github.com/nickmcmullen
+- <i class="fa fa-link"></i> [](nickmcmullen.github.io)
+- <i class="fa fa-phone"></i> (111) 111-1111 (placeholder)
 
 
 
@@ -77,14 +76,11 @@ Language Skills {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "R",                  4.5,
+  "Excel",              4,
+  "Tableau",            3.5
 )
+
 
 build_skill_bars(skills)
 ```
@@ -96,11 +92,19 @@ build_skill_bars(skills)
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+Thanks to Nick Strayer and Prof. Jesse Lecy for creating and refining this template
 
-The source code is available at [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+\
+
+Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
+
+\
+
+Source code: [github.com/nickmcmullen/cv](https://github.com/nickmcmullen/cv).
 
 Last updated on `r Sys.Date()`.
+
+
 
 
 
@@ -108,15 +112,13 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Nick McMullen - Sample Resume Template {#title}
 --------------------------------------------------------------------------------
 
-
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+intro_text <- "DISCLAIMER: THIS RESUME IS A SAMPLE FOR CLASSWORK ONLY... Analytically-inclined, people-oriented HR practitioner with experience supporting executives and front-line teams as a strategic partner. Skilled in compensation design and management, people analytics, and HR operations. 
 "
+
 
 cat(sanitize_links(intro_text))
 ```
@@ -127,105 +129,33 @@ Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'education')
+position_data %>% print_section('education')
 ```
 
 
 
-Research Experience {data-icon=laptop}
+Selected Positions {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'research_positions')
+position_data %>% print_section('industry_positions')
 ```
 
 
-
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-I have worked in a variety of roles ranging from journalist to software engineer to data scientist. I like collaborative environments where I can learn from my peers. 
-:::
-
-```{r}
-print_section(position_data, 'industry_positions')
-```
-
-<br>
-<br>
-<br>
-
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-::: aside
-I am passionate about education. I believe that no topic is too complex if the teacher is empathetic and willing to think about new methods of approaching task. 
-:::
-
-```{r}
-print_section(position_data, 'teaching_positions')
-```
-
-
-Selected Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
-
-
-::: aside
-I regularly blog about data science and visualization on my blog [LiveFreeOrDichotomize.](https://livefreeordichotomize.com/)
-:::
-
-```{r}
-print_section(position_data, 'data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
+Teaching {data-icon=graduation-cap}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'about_me_press')
+position_data %>% print_section('teaching_positions')
 ```
 
-
-
-Selected Press (By)  {data-icon=newspaper}
+Professional Certifications {data-icon=graduation-cap}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'by_me_press')
+position_data %>% print_section('certifications')
 ```
 
 
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'academic_articles')
-```
-
-
-
-```{r}
-if(PDF_EXPORT){
-  cat("
-  
-Links {data-icon=link}
---------------------------------------------------------------------------------
-
-<br>
-
-
-")
-  
-  walk2(links, 1:length(links), function(link, index){
-    print(glue('{index}. {link}'))
-  })
-}
-```
 
 
