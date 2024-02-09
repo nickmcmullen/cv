@@ -96,7 +96,13 @@ Check out my website at nickmcmullen.github.io
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
+Thanks to Nick Strayer and Prof. Jesse Lecy for creating and refining this template
+
+\
+
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
+
+\
 
 Source code: [github.com/nickmcmullen/cv](https://github.com/nickmcmullen/cv).
 
@@ -153,19 +159,3 @@ position_data %>% print_section('certifications')
 ```
 
 
-Fun R packages I recommend
---------------------------------------------------------------------------------
-
-```{r}
-position_data %>% print_section('r_packages')
-
-```
-
-
-On my off days I enjoy...
---------------------------------------------------------------------------------
-
-```{r}
-position_data %>% print_section('fun_activities')
-
-```
