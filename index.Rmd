@@ -57,7 +57,6 @@ Contact {#contact}
 
 - <i class="fa fa-envelope"></i> nmcmulle@asu.edu
 - <i class="fa fa-github"></i> github.com/nickmcmullen
-- <i class="fa fa-link"></i> [](nickmcmullen.github.io)
 - <i class="fa fa-phone"></i> (111) 111-1111 (placeholder)
 
 
